@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/karadHub/hello-python.git'
+                git branch: 'main', url: 'https://github.com/karadHub/hello-python.git'
             }
         }
         stage('Build Docker Image') {
