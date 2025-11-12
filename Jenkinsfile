@@ -8,12 +8,14 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t hello-python .'
+                // sh 'docker build -t hello-python .' (commented for Windows PowerShell)
+                powershell 'docker build -t hello-python .'
             }
         }
         stage('Run App') {
             steps {
-                sh 'docker run --rm hello-python'
+                // sh 'docker run --rm hello-python' (commented for Windows PowerShell)
+                powershell 'docker run --rm hello-python'
             }
         }
     }
